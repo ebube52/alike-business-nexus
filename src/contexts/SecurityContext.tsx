@@ -1,5 +1,6 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface User {
   id: string;
@@ -30,6 +31,7 @@ export const useAuth = () => {
 export const SecurityProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   const checkAuth = () => {
     setIsLoading(true);
@@ -80,6 +82,7 @@ export const SecurityProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     localStorage.removeItem('auth_user');
     localStorage.removeItem('auth_token');
     setUser(null);
+    navigate('/');
   };
 
   useEffect(() => {

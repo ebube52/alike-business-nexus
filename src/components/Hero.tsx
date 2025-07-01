@@ -1,6 +1,7 @@
 
 import { ArrowRight, Users, MessageCircle, Search, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ConnectingAnimation from './ConnectingAnimation';
 
 const Hero = () => {
   return (
@@ -18,6 +19,14 @@ const Hero = () => {
               <p className="text-xl text-gray-300 leading-relaxed">
                 Join the premier platform for entrepreneurs, investors, and business professionals to discover partnerships, joint ventures, and investment opportunities.
               </p>
+            </div>
+
+            {/* Connecting Animation */}
+            <div className="bg-slate-800/50 rounded-2xl p-6 backdrop-blur-sm">
+              <h3 className="text-lg font-semibold text-center text-yellow-400 mb-4">
+                Watch People Connect to Achieve Goals
+              </h3>
+              <ConnectingAnimation />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
