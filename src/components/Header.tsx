@@ -2,26 +2,16 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const handleGetStarted = () => {
-    navigate('/partnerships');
-  };
-
-  const handleSignIn = () => {
-    navigate('/partnerships');
-  };
 
   return (
     <header className="bg-white shadow-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
+          <div className="flex items-center">
             <div className="bg-slate-800 text-yellow-500 font-bold text-xl px-3 py-2 rounded">
               BA
             </div>
@@ -48,17 +38,10 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button 
-              variant="outline" 
-              className="border-gray-300 text-gray-700 hover:text-gray-900"
-              onClick={handleSignIn}
-            >
+            <Button variant="outline" className="border-gray-300 text-gray-700 hover:text-gray-900">
               Sign In
             </Button>
-            <Button 
-              className="bg-yellow-600 hover:bg-yellow-700 text-white"
-              onClick={handleGetStarted}
-            >
+            <Button className="bg-yellow-600 hover:bg-yellow-700 text-white">
               Get Started
             </Button>
           </div>
@@ -91,17 +74,10 @@ const Header = () => {
                 Contact
               </a>
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
-                <Button 
-                  variant="outline" 
-                  className="border-gray-300 text-gray-700 hover:text-gray-900"
-                  onClick={handleSignIn}
-                >
+                <Button variant="outline" className="border-gray-300 text-gray-700 hover:text-gray-900">
                   Sign In
                 </Button>
-                <Button 
-                  className="bg-yellow-600 hover:bg-yellow-700 text-white"
-                  onClick={handleGetStarted}
-                >
+                <Button className="bg-yellow-600 hover:bg-yellow-700 text-white">
                   Get Started
                 </Button>
               </div>
