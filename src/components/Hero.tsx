@@ -1,6 +1,7 @@
 
 import { ArrowRight, Users, MessageCircle, Search, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ConnectingAnimation from './ConnectingAnimation';
 
 const Hero = () => {
   return (
@@ -28,6 +29,12 @@ const Hero = () => {
               <Button size="lg" variant="outline" className="border-gray-400 text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg">
                 Watch Demo
               </Button>
+            </div>
+
+            {/* Connecting Animation */}
+            <div className="mt-12">
+              <h3 className="text-lg font-semibold mb-4 text-center">See How Connections Lead to Success</h3>
+              <ConnectingAnimation />
             </div>
 
             {/* Trust Indicators */}

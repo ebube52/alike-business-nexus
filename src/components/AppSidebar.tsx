@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { useLocation, NavLink } from 'react-router-dom';
+import { useLocation, NavLink, useNavigate } from 'react-router-dom';
 import { Users, Calendar, MessageSquare, MessageCircle, Newspaper, User, Settings, LogOut } from 'lucide-react';
 import {
   Sidebar,
@@ -28,9 +28,19 @@ const navigationItems = [
 export function AppSidebar() {
   const { state } = useSidebar();
   const location = useLocation();
+  const navigate = useNavigate();
   const currentPath = location.pathname;
 
   const isActive = (path: string) => currentPath === path;
+
+  const handleSignOut = () => {
+    // Clear any stored user data
+    localStorage.clear();
+    sessionStorage.clear();
+    
+    // Redirect to landing page
+    navigate('/');
+  };
 
   return (
     <Sidebar className={state === 'collapsed' ? 'w-14' : 'w-64'}>
@@ -83,7 +93,11 @@ export function AppSidebar() {
             <Settings className="h-4 w-4 mr-2" />
             {state === 'expanded' && <span>Settings</span>}
           </Button>
-          <Button variant="ghost" className="justify-start text-red-600 hover:text-red-700 hover:bg-red-50">
+          <Button 
+            variant="ghost" 
+            className="justify-start text-red-600 hover:text-red-700 hover:bg-red-50"
+            onClick={handleSignOut}
+          >
             <LogOut className="h-4 w-4 mr-2" />
             {state === 'expanded' && <span>Sign Out</span>}
           </Button>
