@@ -1,13 +1,15 @@
-
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Users, Package, Truck, DollarSign, MapPin, Clock, Phone, Mail } from 'lucide-react';
+import { Users, Package, Truck, DollarSign, MapPin, Clock, Phone, Mail, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
+  
   const [orders] = useState([
     {
       id: "ORD-001",
@@ -90,7 +92,20 @@ const AdminDashboard = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => navigate('/')}
+                className="flex items-center"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Home
+              </Button>
+              <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
+            </div>
+          </div>
         </div>
       </div>
 
