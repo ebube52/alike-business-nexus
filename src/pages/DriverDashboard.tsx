@@ -1,11 +1,13 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Clock, Package, Bell, Truck } from 'lucide-react';
+import { MapPin, Clock, Package, Bell, Truck, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const DriverDashboard = () => {
+  const navigate = useNavigate();
+  
   const [isOnline, setIsOnline] = useState(false);
   const [notifications, setNotifications] = useState([
     {
@@ -46,7 +48,18 @@ const DriverDashboard = () => {
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-gray-900">Driver Dashboard</h1>
+            <div className="flex items-center space-x-4">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => navigate('/')}
+                className="flex items-center"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Home
+              </Button>
+              <h1 className="text-2xl font-bold text-gray-900">Driver Dashboard</h1>
+            </div>
             <div className="flex items-center space-x-4">
               <Badge className={isOnline ? "bg-green-500" : "bg-gray-500"}>
                 {isOnline ? "Online" : "Offline"}

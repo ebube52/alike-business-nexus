@@ -1,14 +1,15 @@
-
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { MapPin, Clock, Package, Truck, User, Phone } from 'lucide-react';
+import { MapPin, Clock, Package, Truck, User, Phone, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import MapComponent from '@/components/MapComponent';
 
 const TrackingPage = () => {
   const { orderId } = useParams();
+  const navigate = useNavigate();
 
   const orderDetails = {
     id: orderId || "ORD-001",
@@ -44,7 +45,18 @@ const TrackingPage = () => {
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-gray-900">Track Order {orderDetails.id}</h1>
+            <div className="flex items-center space-x-4">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => navigate('/')}
+                className="flex items-center"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Home
+              </Button>
+              <h1 className="text-2xl font-bold text-gray-900">Track Order {orderDetails.id}</h1>
+            </div>
             <Button 
               onClick={() => window.location.reload()}
               variant="outline"
