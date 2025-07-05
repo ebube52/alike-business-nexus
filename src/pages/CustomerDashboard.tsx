@@ -1,9 +1,10 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Clock, Package, Bell, ArrowLeft } from 'lucide-react';
+import { MapPin, Clock, Package, Bell, ArrowLeft, Map } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const CustomerDashboard = () => {
@@ -109,8 +110,14 @@ const CustomerDashboard = () => {
 
                     <div className="mt-3 pt-3 border-t flex justify-between">
                       <span className="text-sm text-gray-600">Driver: {order.driver}</span>
-                      <Button variant="outline" size="sm">
-                        Track Order
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => navigate(`/track/${order.id}`)}
+                        className="flex items-center"
+                      >
+                        <Map className="h-4 w-4 mr-1" />
+                        Track with Map
                       </Button>
                     </div>
                   </div>

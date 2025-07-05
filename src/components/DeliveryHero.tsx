@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Truck, Package, Clock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import Logo from './Logo';
 
 const DeliveryHero = () => {
   const navigate = useNavigate();
@@ -11,11 +12,15 @@ const DeliveryHero = () => {
     <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-8">
+          <div className="flex justify-center mb-8">
+            <Logo size="lg" className="text-white" />
+          </div>
+          
           <h1 className="text-5xl font-bold">
-            Dry Cleaning <span className="text-yellow-400">Delivery</span>
+            Professional <span className="text-yellow-400">Dry Cleaning</span> Delivery
           </h1>
           <p className="text-xl max-w-3xl mx-auto opacity-90">
-            Professional dry cleaning pickup and delivery service. Track your items through the entire process with real-time updates.
+            Track your garments in real-time from pickup to delivery. Professional cleaning with complete transparency.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
