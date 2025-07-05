@@ -30,7 +30,7 @@ const ServiceOptions = () => {
             <Button 
               className="w-full bg-blue-600 hover:bg-blue-700" 
               size="lg"
-              onClick={() => navigate('/customer')}
+              onClick={() => navigate('/schedule-pickup')}
             >
               Request Pickup
             </Button>
@@ -45,7 +45,7 @@ const ServiceOptions = () => {
             <Button 
               className="w-full bg-green-600 hover:bg-green-700" 
               size="lg"
-              onClick={() => navigate('/driver')}
+              onClick={() => navigate('/become-driver')}
             >
               Start Driving
             </Button>

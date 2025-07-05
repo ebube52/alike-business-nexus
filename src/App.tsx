@@ -9,6 +9,8 @@ import CustomerDashboard from "./pages/CustomerDashboard";
 import DriverDashboard from "./pages/DriverDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import TrackingPage from "./pages/TrackingPage";
+import SchedulePickup from "./pages/SchedulePickup";
+import BecomeDriver from "./pages/BecomeDriver";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +27,8 @@ const App = () => (
           <Route path="/driver" element={<DriverDashboard />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/track/:orderId" element={<TrackingPage />} />
+          <Route path="/schedule-pickup" element={<SchedulePickup />} />
+          <Route path="/become-driver" element={<BecomeDriver />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
