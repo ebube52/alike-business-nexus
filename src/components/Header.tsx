@@ -22,9 +22,11 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
-            <div className="bg-slate-800 text-yellow-500 font-bold text-xl px-3 py-2 rounded">
-              BA
-            </div>
+            <img 
+              src="/lovable-uploads/c2947263-c74d-4148-a5b8-f949a3a01c45.png" 
+              alt="Buyer's Alike Logo" 
+              className="h-10 w-10"
+            />
             <span className="ml-3 text-xl font-semibold text-gray-900">
               Buyer's Alike
             </span>

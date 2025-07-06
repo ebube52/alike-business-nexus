@@ -63,9 +63,11 @@ const Hero = () => {
             <div className="bg-white rounded-2xl shadow-2xl p-8 text-gray-900">
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="bg-slate-800 text-yellow-500 font-bold text-lg px-3 py-2 rounded">
-                    BA
-                  </div>
+                  <img 
+                    src="/lovable-uploads/c2947263-c74d-4148-a5b8-f949a3a01c45.png" 
+                    alt="Buyer's Alike Logo" 
+                    className="h-10 w-10"
+                  />
                   <div>
                     <h3 className="font-semibold text-lg">Welcome, Michael</h3>
                     <p className="text-gray-600">Real Estate Investor</p>

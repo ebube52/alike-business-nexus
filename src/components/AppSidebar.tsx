@@ -46,9 +46,11 @@ export function AppSidebar() {
     <Sidebar className={state === 'collapsed' ? 'w-14' : 'w-64'}>
       <SidebarHeader className="p-4">
         <div className="flex items-center space-x-3">
-          <div className="bg-yellow-500 text-slate-900 font-bold text-xl px-3 py-2 rounded">
-            BA
-          </div>
+          <img 
+            src="/lovable-uploads/c2947263-c74d-4148-a5b8-f949a3a01c45.png" 
+            alt="Buyer's Alike Logo" 
+            className="h-8 w-8"
+          />
           {state === 'expanded' && (
             <span className="text-xl font-semibold">Buyer's Alike</span>
           )}
