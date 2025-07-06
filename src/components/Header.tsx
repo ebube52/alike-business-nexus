@@ -3,18 +3,17 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import Logo from './Logo';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate('/schedule-pickup');
+    navigate('/partnerships');
   };
 
   const handleSignIn = () => {
-    navigate('/customer');
+    navigate('/partnerships');
   };
 
   return (
@@ -22,20 +21,25 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="cursor-pointer" onClick={() => navigate('/')}>
-            <Logo size="sm" />
+          <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
+            <div className="bg-slate-800 text-yellow-500 font-bold text-xl px-3 py-2 rounded">
+              BA
+            </div>
+            <span className="ml-3 text-xl font-semibold text-gray-900">
+              Buyer's Alike
+            </span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Services
-            </a>
-            <a href="#tracking" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Track Order
+            <a href="#features" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Features
             </a>
             <a href="#about" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               About
+            </a>
+            <a href="#pricing" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Pricing
             </a>
             <a href="#contact" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Contact
@@ -49,13 +53,13 @@ const Header = () => {
               className="border-gray-300 text-gray-700 hover:text-gray-900"
               onClick={handleSignIn}
             >
-              Dashboard
+              Sign In
             </Button>
             <Button 
-              className="bg-blue-600 hover:bg-blue-700 text-white"
+              className="bg-yellow-600 hover:bg-yellow-700 text-white"
               onClick={handleGetStarted}
             >
-              Schedule Pickup
+              Get Started
             </Button>
           </div>
 
@@ -74,14 +78,14 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-4">
             <nav className="flex flex-col space-y-4">
-              <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
-                Services
-              </a>
-              <a href="#tracking" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
-                Track Order
+              <a href="#features" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                Features
               </a>
               <a href="#about" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
                 About
+              </a>
+              <a href="#pricing" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                Pricing
               </a>
               <a href="#contact" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
                 Contact
@@ -92,13 +96,13 @@ const Header = () => {
                   className="border-gray-300 text-gray-700 hover:text-gray-900"
                   onClick={handleSignIn}
                 >
-                  Dashboard
+                  Sign In
                 </Button>
                 <Button 
-                  className="bg-blue-600 hover:bg-blue-700 text-white"
+                  className="bg-yellow-600 hover:bg-yellow-700 text-white"
                   onClick={handleGetStarted}
                 >
-                  Schedule Pickup
+                  Get Started
                 </Button>
               </div>
             </nav>
